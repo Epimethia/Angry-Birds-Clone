@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Input Manager">
+      <UniqueIdentifier>{96d11a22-291f-4074-9795-d9ba9931c44d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ShaderLoader">
+      <UniqueIdentifier>{edf08042-5482-4d0b-852e-2db25b2ddf2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Physics Engine">
+      <UniqueIdentifier>{2b2df037-00d7-487b-aa17-d045c3d171f7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderLoader.cpp">
+      <Filter>Source Files\ShaderLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="Level.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Resource.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InputManager.cpp">
+      <Filter>Source Files\Input Manager</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="InputManager.h">
+      <Filter>Source Files\Input Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderLoader.h">
+      <Filter>Source Files\ShaderLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="Line.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Level.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine.h">
+      <Filter>Source Files\Physics Engine</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
