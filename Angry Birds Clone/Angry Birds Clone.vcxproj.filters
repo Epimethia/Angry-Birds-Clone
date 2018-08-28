@@ -16,11 +16,14 @@
     <Filter Include="Source Files\Input Manager">
       <UniqueIdentifier>{96d11a22-291f-4074-9795-d9ba9931c44d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\ShaderLoader">
-      <UniqueIdentifier>{edf08042-5482-4d0b-852e-2db25b2ddf2a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Physics Engine">
       <UniqueIdentifier>{2b2df037-00d7-487b-aa17-d045c3d171f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Physics Engine\ShaderLoader">
+      <UniqueIdentifier>{edf08042-5482-4d0b-852e-2db25b2ddf2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Physics Engine\Entities">
+      <UniqueIdentifier>{9c91d531-26ae-4bf2-a858-f5e695c14d80}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -28,15 +31,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ShaderLoader.cpp">
-      <Filter>Source Files\ShaderLoader</Filter>
+      <Filter>Source Files\Physics Engine\ShaderLoader</Filter>
     </ClCompile>
     <ClCompile Include="Level.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Game.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Entity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Resource.cpp">
@@ -45,16 +45,19 @@
     <ClCompile Include="InputManager.cpp">
       <Filter>Source Files\Input Manager</Filter>
     </ClCompile>
+    <ClCompile Include="BoxEntity.cpp">
+      <Filter>Source Files\Physics Engine\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="BirdEntity.cpp">
+      <Filter>Source Files\Physics Engine\Entities</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="InputManager.h">
       <Filter>Source Files\Input Manager</Filter>
     </ClInclude>
     <ClInclude Include="ShaderLoader.h">
-      <Filter>Source Files\ShaderLoader</Filter>
-    </ClInclude>
-    <ClInclude Include="Line.h">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Physics Engine\ShaderLoader</Filter>
     </ClInclude>
     <ClInclude Include="Game.h">
       <Filter>Source Files</Filter>
@@ -62,14 +65,17 @@
     <ClInclude Include="Level.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="Entity.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="Resource.h">
       <Filter>Resource Files</Filter>
     </ClInclude>
-    <ClInclude Include="Engine.h">
-      <Filter>Source Files\Physics Engine</Filter>
+    <ClInclude Include="BoxEntity.h">
+      <Filter>Source Files\Physics Engine\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="BirdEntity.h">
+      <Filter>Source Files\Physics Engine\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Source Files\Physics Engine\Entities</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

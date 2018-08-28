@@ -1,5 +1,5 @@
 #include "InputManager.h"
-
+#include <iostream>
 unsigned char InputManager::KeyArray[255];
 unsigned int InputManager::MouseArray[3];
 glm::vec2 InputManager::MousePos = glm::vec2();
@@ -39,6 +39,8 @@ void InputManager::ProcessMouse() {
 std::shared_ptr<InputManager> InputManager::GetInstance() {
 	if (InputManagerInstance == nullptr) {
 		InputManagerInstance = std::shared_ptr<InputManager>();
+		for (int i = 0; i < 255; ++i) KeyArray[i] = RELEASED;
+		for (int i = 0; i < 3; ++i) MouseArray[i] = RELEASED;
 	}
 	return InputManagerInstance;
 }

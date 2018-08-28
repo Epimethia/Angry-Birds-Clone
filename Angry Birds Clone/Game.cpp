@@ -6,8 +6,6 @@ Game::~Game() {}
 
 void Game::Init() {
 	level1.Init();
-
-
 }
 
 void Game::Render() {
