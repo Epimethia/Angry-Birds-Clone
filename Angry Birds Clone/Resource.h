@@ -9,8 +9,8 @@ namespace Engine {
 	extern b2World* World;
 	extern GLuint DebugShader;
 
-	static float ScreenWidth = 1600.0f;
-	static float ScreenHeight = 900.0f;
+	static float ScreenWidth = 1300.0f;
+	static float ScreenHeight = 600.0f;
 	static float Ratio = 120.0f;
 
 	float const TimeStep = 1.0f / 120.0f;

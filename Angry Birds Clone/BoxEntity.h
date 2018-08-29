@@ -19,4 +19,7 @@ public:
 	void Init();
 	void Process();
 	void Render();
+private:
+	b2PolygonShape m_DynamicBox;
+	b2Vec2 m_Size;
 };

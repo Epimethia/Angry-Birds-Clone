@@ -4,6 +4,7 @@
 #include "Dependencies\glm\glm.hpp"
 #include "Dependencies\glm\gtx\string_cast.hpp"
 #include <iostream>
+#include <memory>
 
 enum KEYSTATE {
 	FIRST_PRESSED,

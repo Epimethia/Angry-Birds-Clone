@@ -12,20 +12,12 @@ class Entity{
 public:
 	Entity(){
 		m_Pos = b2Vec2(15.0f, 5.0f);
-		m_Size = b2Vec2(0.3f, 0.3f);
 		m_Angle = 0.0f;
 		m_Type = b2_dynamicBody;
 	};
 	~Entity(){
 		Engine::World->DestroyBody(m_BoxBody);
 		m_BoxBody = nullptr;
-	};
-
-	Entity(b2Vec2 _Pos, b2Vec2 _Size, float _Angle, b2BodyType _Type){
-		m_Pos = _Pos;
-		m_Size = _Size;
-		m_Angle = _Angle;
-		m_Type = _Type;
 	};
 
 	b2Body* GetBody(){ return m_BoxBody; };
@@ -39,12 +31,10 @@ protected:
 	GLuint m_VAO, m_VBO;
 
 	//Box2d variables
-	b2PolygonShape m_DynamicBox;
 	b2Body* m_BoxBody;
 	b2BodyType m_Type;
 
 	//Entity variables
 	b2Vec2 m_Pos;
-	b2Vec2 m_Size;
 	float m_Angle;
 };

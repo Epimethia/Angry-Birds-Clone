@@ -1,21 +1,34 @@
 #include "Level.h"
 Level::Level () {
 	Ground = std::make_shared<BoxEntity>(b2Vec2(7.0f, 0.0f), b2Vec2(7.0f, 0.1f), 0.0f, b2_staticBody);
-	SlingshotPos = b2Vec2(3.0f, 1.5f);
+	SlingshotPos = b2Vec2(1.5f, 1.5f);
 	EntityVect.push_back(Ground);
 
 	//Slingshot thing
 	//EntityVect.push_back(std::make_shared<BoxEntity>(b2Vec2(2.0f, 1.0f), b2Vec2(0.1f, 0.1f), 0.0f, b2_staticBody));
 
 	//Building Blocks
-	EntityVect.push_back(std::make_shared<BoxEntity>(b2Vec2(10.35f, 3.5f), b2Vec2(0.15f, 0.8f), 0.0f, b2_dynamicBody));
-	EntityVect.push_back(std::make_shared<BoxEntity>(b2Vec2(11.65f, 3.5f), b2Vec2(0.15f, 0.8f), 0.0f, b2_dynamicBody));
-	EntityVect.push_back(std::make_shared<BoxEntity>(b2Vec2(11.0f, 6.0f), b2Vec2(0.8f, 0.15f), 0.0f, b2_dynamicBody));
+	EntityVect.push_back(std::make_shared<BoxEntity>(b2Vec2(8.4f, 0.5f), b2Vec2(0.07f, 0.1f), 0.0f, b2_dynamicBody));
+	EntityVect.push_back(std::make_shared<BoxEntity>(b2Vec2(9.0f, 0.5f), b2Vec2(0.07f, 0.1f), 0.0f, b2_dynamicBody));
+	EntityVect.push_back(std::make_shared<BoxEntity>(b2Vec2(9.6f, 0.5f), b2Vec2(0.07f, 0.1f), 0.0f, b2_dynamicBody));
+	EntityVect.push_back(std::make_shared<BoxEntity>(b2Vec2(10.2f, 0.5f), b2Vec2(0.07f, 0.1f), 0.0f, b2_dynamicBody));
+	EntityVect.push_back(std::make_shared<BoxEntity>(b2Vec2(9.3f, 0.6f), b2Vec2(0.96f, 0.07f), 0.0f, b2_dynamicBody));
+
+	EntityVect.push_back(std::make_shared<BoxEntity>(b2Vec2(8.8f, 1.2f), b2Vec2(0.07f, 0.55f), 0.0f, b2_dynamicBody));
+	EntityVect.push_back(std::make_shared<BoxEntity>(b2Vec2(9.8f, 1.2f), b2Vec2(0.07f, 0.55f), 0.0f, b2_dynamicBody));
+	EntityVect.push_back(std::make_shared<BoxEntity>(b2Vec2(9.3f, 1.7f), b2Vec2(0.55f, 0.05f), 0.0f, b2_dynamicBody));
+
+	EntityVect.push_back(std::make_shared<BoxEntity>(b2Vec2(9.0f, 2.2f), b2Vec2(0.07f, 0.45f), 0.0f, b2_dynamicBody));
+	EntityVect.push_back(std::make_shared<BoxEntity>(b2Vec2(9.6f, 2.2f), b2Vec2(0.07f, 0.45f), 0.0f, b2_dynamicBody));
+
+	EntityVect.push_back(std::make_shared<BoxEntity>(b2Vec2(9.3f, 2.9f), b2Vec2(0.35f, 0.07f), 0.0f, b2_dynamicBody));
+	EntityVect.push_back(std::make_shared<BoxEntity>(b2Vec2(9.3f, 3.1f), b2Vec2(0.07f, 0.2f), 0.0f, b2_dynamicBody));
+
 
 	//The birds
-	BirdVect.push_back(std::make_shared<BirdEntity>(b2Vec2(1.8f, 1.0f), b2Vec2(0.1f, 0.1f), 0.0f, b2_dynamicBody));
-	BirdVect.push_back(std::make_shared<BirdEntity>(b2Vec2(2.1f, 1.0f), b2Vec2(0.1f, 0.1f), 0.0f, b2_dynamicBody));
-	BirdVect.push_back(std::make_shared<BirdEntity>(b2Vec2(2.4f, 1.0f), b2Vec2(0.1f, 0.1f), 0.0f, b2_dynamicBody));
+	BirdVect.push_back(std::make_shared<BirdEntity>(b2Vec2(1.8f, 0.5f), 0.1f, 0.0f, b2_dynamicBody));
+	BirdVect.push_back(std::make_shared<BirdEntity>(b2Vec2(2.1f, 0.5f), 0.1f, 0.0f, b2_dynamicBody));
+	BirdVect.push_back(std::make_shared<BirdEntity>(b2Vec2(2.4f, 0.5f), 0.1f, 0.0f, b2_dynamicBody));
 }
 
 Level::~Level () {}
@@ -49,32 +62,32 @@ void Level::Process() {
 	}
 
 	float MouseX = ((IM->GetMousePos().x) / 120.0f);
-	float MouseY = ((900.0f - IM->GetMousePos().y) / 120.0f);
+	float MouseY = ((Engine::ScreenHeight - IM->GetMousePos().y) / 120.0f);
 
+	b2Body* body = BirdVect.back()->GetBody();
 	//Create the mouse joint and initialize it
 	if (IM->MouseArray[MOUSE_LEFT] == FIRST_PRESSED && MouseJoint == nullptr) {
-		b2Body* body = BirdVect.back()->GetBody();
+		
 		body->SetTransform(b2Vec2(MouseX, MouseY), 0.0f);
 		body->SetAwake(false);
 		md.bodyA = m_groundbody;
 		md.bodyB = body;
 		md.target = b2Vec2(MouseX, MouseY);
-		md.maxForce = 100.0f;
+		md.maxForce = 1000.0f;
 		md.frequencyHz = 100.0f;
 		md.dampingRatio = 6.0f;
 		md.collideConnected = false;
 		MouseJoint = static_cast<b2MouseJoint*>(Engine::World->CreateJoint(&md));
 		body->SetFixedRotation(true);
-
 	}
 
 	//Move the mouse joint in relation to the mouse pos
 	if (IM->MouseArray[MOUSE_LEFT] == HELD && MouseJoint != nullptr) {
-		if ((BirdVect.back()->GetBody()->GetPosition() - SlingshotPos).Length() >= 1.3f){
-			b2Vec2 d = b2Vec2(MouseX, MouseY) - SlingshotPos;
+		if ((body->GetPosition() - SlingshotPos).Length() >= 1.0f){
+			b2Vec2 d = body->GetPosition() - SlingshotPos;
 			d.Normalize();
-			d *= 1.29f;
-			MouseJoint->GetBodyB()->SetTransform(d + SlingshotPos, 0.0f);
+			d *= 0.99f;
+			body->SetTransform(d + SlingshotPos, 0.0f);
 			MouseJoint->SetTarget(d + SlingshotPos);
 		}
 		else{
@@ -87,26 +100,22 @@ void Level::Process() {
 	
 		Engine::World->DestroyJoint(MouseJoint);
 		MouseJoint = nullptr;
+		//Using the spring formula, f = -kx for the slingshot
+		b2Vec2 Direction = body->GetPosition() - SlingshotPos;
+		b2Vec2 Force = Direction;				//Force is a copy of Direction because .Normalize() changes the b2vec2 its used on
+		float k = 12.0f;						//Strength of the spring
+		float x = Direction.Length() * 0.7f;			//Distance stretched
+		Force.Normalize();						//Normalizing the direction vector
+		Force *= -1.0f * (k * x);				//Calculating the force and multiplying it to the direction vector (F = -1 * (k * x))
 
-		if (BirdVect.back()->GetBody()->GetPosition().x > 3.6f){
-			BirdVect.back()->GetBody()->SetTransform(BirdVect.back()->m_SpawnPos, 0.0f);
-		}
-		else{
-			//Using the spring formula, f = -kx for the slingshot
-			b2Vec2 Direction = BirdVect.back()->GetBody()->GetPosition() - SlingshotPos;
-			b2Vec2 Force = Direction;				//Force is a copy of Direction because .Normalize() changes the b2vec2 its used on
-			float k = 15.0f;						//Strength of the spring
-			float x = Direction.Length() * 0.7f;			//Distance stretched
-			Force.Normalize();						//Normalizing the direction vector
-			Force *= -1.0f * (k * x);				//Calculating the force and multiplying it to the direction vector (F = -1 * (k * x))
+		body->SetAwake(false);
+		body->SetAwake(true);
+		body->SetLinearVelocity(b2Vec2(Force.x, Force.y * 1.3f));
+		body->SetFixedRotation(false);
 
-			BirdVect.back()->GetBody()->SetLinearVelocity(Force);
-			BirdVect.back()->GetBody()->SetFixedRotation(false);
+		EntityVect.push_back(BirdVect.back());
+		BirdVect.pop_back();
 
-			EntityVect.push_back(BirdVect.back());
-			BirdVect.pop_back();
-		}
-		
 	}
 
 	IM->ProcessKeys();

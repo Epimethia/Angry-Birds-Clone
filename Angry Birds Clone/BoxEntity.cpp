@@ -19,8 +19,6 @@ BoxEntity::BoxEntity(b2Vec2 _Pos, b2Vec2 _Size, float _Angle, b2BodyType _Type) 
 	m_Type = _Type;
 }
 
-
-
 void BoxEntity::Init() {
 
 	//Creating the rigidbody for the entity

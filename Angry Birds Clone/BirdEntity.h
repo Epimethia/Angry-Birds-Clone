@@ -14,12 +14,15 @@ class BirdEntity : public Entity{
 public:
 	BirdEntity();
 	~BirdEntity();
-	BirdEntity(b2Vec2 _Pos, b2Vec2 _Size, float _Angle, b2BodyType _Type);
+	BirdEntity(b2Vec2 _Pos, float _Radius, float _Angle, b2BodyType _Type);
 
 	void Init();
 	void Process();
 	void Render();
 
 	b2Vec2 m_SpawnPos;
+private:
+	b2CircleShape CircleBody;
+	float m_Radius;
 };
 
