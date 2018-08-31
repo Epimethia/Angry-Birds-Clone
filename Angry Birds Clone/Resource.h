@@ -8,6 +8,7 @@ namespace Engine {
 	static const b2Vec2 Gravity(0.0f, -9.8f);
 	extern b2World* World;
 	extern GLuint DebugShader;
+	extern GLuint EntityShader;
 
 	static float ScreenWidth = 1300.0f;
 	static float ScreenHeight = 600.0f;
