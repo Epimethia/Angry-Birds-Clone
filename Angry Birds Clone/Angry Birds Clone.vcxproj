@@ -128,12 +128,14 @@
   <ItemGroup>
     <ClCompile Include="BirdEntity.cpp" />
     <ClCompile Include="BoxEntity.cpp" />
+    <ClCompile Include="Clock.cpp" />
     <ClCompile Include="ContactListener.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GlassEntity.cpp" />
     <ClCompile Include="GroundEntity.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="Level.cpp" />
+    <ClCompile Include="PigEntity.cpp" />
     <ClCompile Include="Resource.cpp" />
     <ClCompile Include="ShaderLoader.cpp" />
     <ClCompile Include="Source.cpp" />
@@ -141,6 +143,7 @@
   <ItemGroup>
     <ClInclude Include="BirdEntity.h" />
     <ClInclude Include="BoxEntity.h" />
+    <ClInclude Include="Clock.h" />
     <ClInclude Include="ContactListener.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="EntityData.h" />
@@ -149,6 +152,7 @@
     <ClInclude Include="GroundEntity.h" />
     <ClInclude Include="Level.h" />
     <ClInclude Include="InputManager.h" />
+    <ClInclude Include="PigEntity.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="ShaderLoader.h" />
   </ItemGroup>

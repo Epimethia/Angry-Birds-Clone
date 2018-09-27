@@ -22,6 +22,8 @@ public:
 	~Entity(){
 		m_BoxBody->GetWorld()->DestroyBody(m_BoxBody);
 		m_BoxBody = nullptr;
+		delete ed;
+		ed = nullptr;
 	};
 
 	b2Body* GetBody(){ return m_BoxBody; };

@@ -1,24 +1,31 @@
-#include "GlassEntity.h"
+#include "PigEntity.h"
 
-GlassEntity::GlassEntity() {
+#include "Dependencies\glew\glew.h"
+#include "Dependencies\freeglut\freeglut.h"
+#include "Dependencies\glm\glm.hpp"
+#include "Dependencies\glm\gtc\matrix_transform.hpp"
+#include "Dependencies\glm\gtc\type_ptr.hpp"
+
+PigEntity::PigEntity() {
 	m_Pos = b2Vec2(15.0f, 5.0f);
-	m_Size = b2Vec2(0.3f, 0.3f);
+	m_Size = b2Vec2(0.15f, 0.15f);
 	m_Angle = 0.0f;
 	m_Type = b2_dynamicBody;
 }
 
-GlassEntity::~GlassEntity() {
-
-}
-
-GlassEntity::GlassEntity(b2Vec2 _Pos, b2Vec2 _Size, float _Angle, b2BodyType _Type) {
+PigEntity::PigEntity(b2Vec2 _Pos) {
 	m_Pos = _Pos;
-	m_Size = _Size;
-	m_Angle = _Angle;
-	m_Type = _Type;
+	m_Size = b2Vec2(0.15f, 0.15f);
+	m_Angle = 0.0f;
+	m_Type = b2_dynamicBody;
 }
 
-void GlassEntity::Init() {
+PigEntity::~PigEntity() {
+	//the parent entity destructor method is called here, which is sufficient to
+	//clear everything here
+}
+
+void PigEntity::Init() {
 
 	//Creating the rigidbody for the entity
 	b2BodyDef BoxBodyDef;
@@ -42,7 +49,7 @@ void GlassEntity::Init() {
 	m_BoxBody->CreateFixture(&FixtureDef);
 
 	ed = new EntityData;
-	ed->EntityType = "GlassBlock";
+	ed->EntityType = "Pig";
 	m_BoxBody->SetUserData(ed);
 
 	//Translating the vertices supplied by Box2D into vertices usable by GLEW
@@ -54,9 +61,9 @@ void GlassEntity::Init() {
 		verts[CurrentIndex++] = 0.0f; //z
 
 		//color verts
-		verts[CurrentIndex++] = 0.2f;
-		verts[CurrentIndex++] = 0.8f;
-		verts[CurrentIndex++] = 1.0f;
+		verts[CurrentIndex++] = 0.39f;
+		verts[CurrentIndex++] = 0.81f;
+		verts[CurrentIndex++] = 0.24f;
 	}
 
 	//generating and binding the buffers
@@ -91,11 +98,11 @@ void GlassEntity::Init() {
 	glBindVertexArray(0);
 }
 
-void GlassEntity::Process() {
+void PigEntity::Process() {
 
 }
 
-void GlassEntity::Render() {
+void PigEntity::Render() {
 	//Creating the transformation matrices
 	glm::mat4 TranslationMatrix = glm::translate(glm::mat4(), glm::vec3(m_BoxBody->GetPosition().x, m_BoxBody->GetPosition().y, 0.0f));
 	glm::mat4 RotationMatrix = glm::rotate(glm::mat4(), m_BoxBody->GetAngle(), glm::vec3(0.0f, 0.0f, 1.0f));

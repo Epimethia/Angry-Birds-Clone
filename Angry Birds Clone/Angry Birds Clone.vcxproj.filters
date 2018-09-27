@@ -13,93 +13,114 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Source Files\Input Manager">
-      <UniqueIdentifier>{96d11a22-291f-4074-9795-d9ba9931c44d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Physics Engine">
       <UniqueIdentifier>{2b2df037-00d7-487b-aa17-d045c3d171f7}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Physics Engine\ShaderLoader">
       <UniqueIdentifier>{edf08042-5482-4d0b-852e-2db25b2ddf2a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Physics Engine\Entities">
-      <UniqueIdentifier>{9c91d531-26ae-4bf2-a858-f5e695c14d80}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Physics Engine\Contact Listener">
       <UniqueIdentifier>{4db55f98-2af4-420e-a850-4f75ceb047d0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Physics Engine\Base Entities">
+      <UniqueIdentifier>{9c91d531-26ae-4bf2-a858-f5e695c14d80}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Physics Engine\Input Manager">
+      <UniqueIdentifier>{96d11a22-291f-4074-9795-d9ba9931c44d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Derived Files">
+      <UniqueIdentifier>{ce60eb35-43e4-4cc3-a509-fbcff0ce6fe0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Physics Engine\Clock">
+      <UniqueIdentifier>{3ceeb225-fdce-41b4-8cae-187960541879}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Derived Files\Entities">
+      <UniqueIdentifier>{ff2e62f1-03d4-4d4c-9712-4d522e607650}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="ShaderLoader.cpp">
       <Filter>Source Files\Physics Engine\ShaderLoader</Filter>
-    </ClCompile>
-    <ClCompile Include="Level.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Game.cpp">
-      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Resource.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
     <ClCompile Include="InputManager.cpp">
-      <Filter>Source Files\Input Manager</Filter>
-    </ClCompile>
-    <ClCompile Include="BoxEntity.cpp">
-      <Filter>Source Files\Physics Engine\Entities</Filter>
-    </ClCompile>
-    <ClCompile Include="BirdEntity.cpp">
-      <Filter>Source Files\Physics Engine\Entities</Filter>
+      <Filter>Source Files\Physics Engine\Input Manager</Filter>
     </ClCompile>
     <ClCompile Include="ContactListener.cpp">
       <Filter>Source Files\Physics Engine\Contact Listener</Filter>
     </ClCompile>
-    <ClCompile Include="GroundEntity.cpp">
-      <Filter>Source Files\Physics Engine\Entities</Filter>
+    <ClCompile Include="Game.cpp">
+      <Filter>Source Files\Derived Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Level.cpp">
+      <Filter>Source Files\Derived Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source.cpp">
+      <Filter>Source Files\Derived Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BirdEntity.cpp">
+      <Filter>Source Files\Derived Files\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="BoxEntity.cpp">
+      <Filter>Source Files\Derived Files\Entities</Filter>
     </ClCompile>
     <ClCompile Include="GlassEntity.cpp">
-      <Filter>Source Files\Physics Engine\Entities</Filter>
+      <Filter>Source Files\Derived Files\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="GroundEntity.cpp">
+      <Filter>Source Files\Derived Files\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="Clock.cpp">
+      <Filter>Source Files\Physics Engine\Clock</Filter>
+    </ClCompile>
+    <ClCompile Include="PigEntity.cpp">
+      <Filter>Source Files\Derived Files\Entities</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="InputManager.h">
-      <Filter>Source Files\Input Manager</Filter>
+      <Filter>Source Files\Physics Engine\Input Manager</Filter>
     </ClInclude>
     <ClInclude Include="ShaderLoader.h">
       <Filter>Source Files\Physics Engine\ShaderLoader</Filter>
     </ClInclude>
-    <ClInclude Include="Game.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Level.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="Resource.h">
       <Filter>Resource Files</Filter>
     </ClInclude>
-    <ClInclude Include="BoxEntity.h">
-      <Filter>Source Files\Physics Engine\Entities</Filter>
-    </ClInclude>
-    <ClInclude Include="BirdEntity.h">
-      <Filter>Source Files\Physics Engine\Entities</Filter>
-    </ClInclude>
     <ClInclude Include="Entity.h">
-      <Filter>Source Files\Physics Engine\Entities</Filter>
+      <Filter>Source Files\Physics Engine\Base Entities</Filter>
     </ClInclude>
     <ClInclude Include="ContactListener.h">
       <Filter>Source Files\Physics Engine\Contact Listener</Filter>
     </ClInclude>
     <ClInclude Include="EntityData.h">
-      <Filter>Source Files\Physics Engine\Entities</Filter>
+      <Filter>Source Files\Physics Engine\Base Entities</Filter>
     </ClInclude>
-    <ClInclude Include="GroundEntity.h">
-      <Filter>Source Files\Physics Engine\Entities</Filter>
+    <ClInclude Include="Game.h">
+      <Filter>Source Files\Derived Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Level.h">
+      <Filter>Source Files\Derived Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BirdEntity.h">
+      <Filter>Source Files\Derived Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="BoxEntity.h">
+      <Filter>Source Files\Derived Files\Entities</Filter>
     </ClInclude>
     <ClInclude Include="GlassEntity.h">
-      <Filter>Source Files\Physics Engine\Entities</Filter>
+      <Filter>Source Files\Derived Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="GroundEntity.h">
+      <Filter>Source Files\Derived Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Clock.h">
+      <Filter>Source Files\Physics Engine\Clock</Filter>
+    </ClInclude>
+    <ClInclude Include="PigEntity.h">
+      <Filter>Source Files\Derived Files\Entities</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

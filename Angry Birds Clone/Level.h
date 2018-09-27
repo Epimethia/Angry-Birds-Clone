@@ -1,11 +1,15 @@
 #pragma once
 #include "Box2D/Box2D.h"
 #include "Resource.h"
+
 #include "BoxEntity.h"
 #include "GroundEntity.h"
 #include "GlassEntity.h"
 #include "BirdEntity.h"
+#include "PigEntity.h"
+
 #include "InputManager.h"
+#include <vector>
 #include <memory>
 
 class Level {
@@ -19,8 +23,7 @@ public:
 
 
 private:
-	std::shared_ptr<GroundEntity> Ground;
-	std::shared_ptr<InputManager> IM;
+	//std::shared_ptr<GroundEntity> Ground;
 	b2Body* m_nullBody;
 
 	b2Vec2 SlingshotPos;

@@ -42,7 +42,7 @@ void BoxEntity::Init() {
 	b2FixtureDef FixtureDef;
 	m_DynamicBox.SetAsBox(m_Size.x, m_Size.y);
 	FixtureDef.shape = &m_DynamicBox;
-	FixtureDef.density = 3.0f;
+	FixtureDef.density = 2.0f;
 	FixtureDef.friction = 1.0f;
 	FixtureDef.restitution = 0.001f;
 
