@@ -1,6 +1,7 @@
 #include "Resource.h"
 #include "ShaderLoader.h"
 extern b2World* Engine::World = new b2World(Engine::Gravity);
+extern Listener* Engine::CL = new Listener;
 extern GLuint Engine::DebugShader = GLuint();
 extern GLuint Engine::EntityShader = GLuint();
 
@@ -18,6 +19,8 @@ void Engine::Init() {
 		const_cast<char*>("Dependencies/shaders/Debug Vertex Shader.vs"),
 		const_cast<char*>("Dependencies/shaders/Debug Fragment Shader.fs")
 	);
+
+	World->SetContactListener(&*CL);
 }
 
 void Engine::Process() {

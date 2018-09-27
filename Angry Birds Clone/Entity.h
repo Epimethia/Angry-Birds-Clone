@@ -8,6 +8,10 @@
 #include "Box2D/Box2D.h"
 #include "Resource.h"
 
+#include <string>
+#include "EntityData.h"
+
+
 class Entity{
 public:
 	Entity(){
@@ -16,7 +20,7 @@ public:
 		m_Type = b2_dynamicBody;
 	};
 	~Entity(){
-		Engine::World->DestroyBody(m_BoxBody);
+		m_BoxBody->GetWorld()->DestroyBody(m_BoxBody);
 		m_BoxBody = nullptr;
 	};
 
@@ -26,6 +30,8 @@ public:
 	virtual void Process() = 0;
 	virtual void Render() = 0;
 
+	EntityData* ed;
+
 protected:
 	//OpenGL Rendering variables
 	GLuint m_VAO, m_VBO;
@@ -33,6 +39,7 @@ protected:
 	//Box2d variables
 	b2Body* m_BoxBody;
 	b2BodyType m_Type;
+
 
 	//Entity variables
 	b2Vec2 m_Pos;

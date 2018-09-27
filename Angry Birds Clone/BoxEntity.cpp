@@ -1,15 +1,22 @@
 #include "BoxEntity.h"
 
+#include "Dependencies\glew\glew.h"
+#include "Dependencies\freeglut\freeglut.h"
+#include "Dependencies\glm\glm.hpp"
+#include "Dependencies\glm\gtc\matrix_transform.hpp"
+#include "Dependencies\glm\gtc\type_ptr.hpp"
+
 BoxEntity::BoxEntity() {
 	m_Pos = b2Vec2(15.0f, 5.0f);
 	m_Size = b2Vec2(0.3f, 0.3f);
 	m_Angle = 0.0f;
 	m_Type = b2_dynamicBody;
+
 }
 
 BoxEntity::~BoxEntity(){
-	Engine::World->DestroyBody(m_BoxBody);
-	m_BoxBody = nullptr;
+	//the parent entity destructor method is called here, which is sufficient to
+	//clear everything here
 }
 
 BoxEntity::BoxEntity(b2Vec2 _Pos, b2Vec2 _Size, float _Angle, b2BodyType _Type) {
@@ -42,12 +49,9 @@ void BoxEntity::Init() {
 	//Binding the fixture to the body
 	m_BoxBody->CreateFixture(&FixtureDef);
 
-	//Randoming the color for the vertices
-	b2Vec3 Color = b2Vec3(
-		static_cast<float>((rand() % 256)) / 256.0f,
-		static_cast<float>((rand() % 256)) / 256.0f,
-		static_cast<float>((rand() % 256)) / 256.0f
-	);
+	ed = new EntityData;
+	ed->EntityType = "Block";
+	m_BoxBody->SetUserData(ed);
 
 	//Translating the vertices supplied by Box2D into vertices usable by GLEW
 	float verts[24];
@@ -58,9 +62,9 @@ void BoxEntity::Init() {
 		verts[CurrentIndex++] = 0.0f; //z
 
 		//color verts
-		verts[CurrentIndex++] = Color.x;
-		verts[CurrentIndex++] = Color.y;
-		verts[CurrentIndex++] = Color.z;
+		verts[CurrentIndex++] = 1.0f;
+		verts[CurrentIndex++] = 0.07f;
+		verts[CurrentIndex++] = 0.0f;
 	}
 	
 	//generating and binding the buffers

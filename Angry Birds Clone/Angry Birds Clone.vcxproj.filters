@@ -25,6 +25,9 @@
     <Filter Include="Source Files\Physics Engine\Entities">
       <UniqueIdentifier>{9c91d531-26ae-4bf2-a858-f5e695c14d80}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Physics Engine\Contact Listener">
+      <UniqueIdentifier>{4db55f98-2af4-420e-a850-4f75ceb047d0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">
@@ -51,6 +54,15 @@
     <ClCompile Include="BirdEntity.cpp">
       <Filter>Source Files\Physics Engine\Entities</Filter>
     </ClCompile>
+    <ClCompile Include="ContactListener.cpp">
+      <Filter>Source Files\Physics Engine\Contact Listener</Filter>
+    </ClCompile>
+    <ClCompile Include="GroundEntity.cpp">
+      <Filter>Source Files\Physics Engine\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="GlassEntity.cpp">
+      <Filter>Source Files\Physics Engine\Entities</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="InputManager.h">
@@ -75,6 +87,18 @@
       <Filter>Source Files\Physics Engine\Entities</Filter>
     </ClInclude>
     <ClInclude Include="Entity.h">
+      <Filter>Source Files\Physics Engine\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="ContactListener.h">
+      <Filter>Source Files\Physics Engine\Contact Listener</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityData.h">
+      <Filter>Source Files\Physics Engine\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="GroundEntity.h">
+      <Filter>Source Files\Physics Engine\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="GlassEntity.h">
       <Filter>Source Files\Physics Engine\Entities</Filter>
     </ClInclude>
   </ItemGroup>

@@ -21,8 +21,10 @@ public:
 	void Render();
 
 	b2Vec2 m_SpawnPos;
+	bool m_bEnableDecay;
 private:
 	b2CircleShape CircleBody;
 	float m_Radius;
+	float m_fDecayTimer;
 };
 

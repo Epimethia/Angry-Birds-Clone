@@ -21,6 +21,8 @@ BirdEntity::BirdEntity(b2Vec2 _Pos, float _Radius, float _Angle, b2BodyType _Typ
 }
 
 void BirdEntity::Init(){
+	m_bEnableDecay = false;
+	m_fDecayTimer = 0.0f;
 	//Creating the rigidbody for the entity
 	b2BodyDef BoxBodyDef;
 	BoxBodyDef.type = m_Type;
@@ -33,7 +35,6 @@ void BirdEntity::Init(){
 
 	//Defining physics parameters for the fixture
 	b2FixtureDef FixtureDef;
-	//m_DynamicBox.SetAsBox(m_Size.x, m_Size.y);
 	CircleBody.m_p.Set(0.0f, 0.0f);
 	CircleBody.m_radius = m_Radius;
 	FixtureDef.shape = &CircleBody;
@@ -44,6 +45,10 @@ void BirdEntity::Init(){
 	//Binding the fixture to the body
 	m_BoxBody->CreateFixture(&FixtureDef);
 
+	ed = new EntityData;
+	ed->EntityType = "Bird";
+	m_BoxBody->SetUserData(ed);
+	auto a = static_cast<EntityData*>(m_BoxBody->GetUserData())->EntityType;
 
 	//Translating the vertices supplied by Box2D into vertices usable by GLEW
 	float verts[216];
@@ -54,9 +59,9 @@ void BirdEntity::Init(){
 		verts[CurrentIndex++] = (CircleBody.m_radius * std::sin(angle)); //y
 		verts[CurrentIndex++] = 0.0f; //z
 
-		//color verts (the birds are all red
+		//color verts (the birds are all blue)
 		verts[CurrentIndex++] = 1.0f;
-		verts[CurrentIndex++] = 0.0f;
+		verts[CurrentIndex++] = 0.82f;
 		verts[CurrentIndex++] = 0.0f;
 	}
 
@@ -93,7 +98,9 @@ void BirdEntity::Init(){
 	glBindVertexArray(0);
 }
 
-void BirdEntity::Process(){}
+void BirdEntity::Process(){
+	
+}
 
 void BirdEntity::Render(){
 	//Creating the transformation matrices

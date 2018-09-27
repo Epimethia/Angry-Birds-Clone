@@ -2,6 +2,8 @@
 #include "Box2D/Box2D.h"
 #include "Resource.h"
 #include "BoxEntity.h"
+#include "GroundEntity.h"
+#include "GlassEntity.h"
 #include "BirdEntity.h"
 #include "InputManager.h"
 #include <memory>
@@ -17,10 +19,9 @@ public:
 
 
 private:
-	std::shared_ptr<BoxEntity> Box;
-	std::shared_ptr<BoxEntity> Ground;
+	std::shared_ptr<GroundEntity> Ground;
 	std::shared_ptr<InputManager> IM;
-	b2Body* m_groundbody;
+	b2Body* m_nullBody;
 
 	b2Vec2 SlingshotPos;
 
